@@ -1,0 +1,508 @@
+{
+  "title": "Unilever KPI Signal Finder",
+  "company": "Unilever",
+  "kpis": [
+    {
+      "label": "KPIs reviewed",
+      "value": "36",
+      "note": "From 6 functions"
+    },
+    {
+      "label": "Real drivers",
+      "value": "4",
+      "note": "Explain 70% of margin moves"
+    },
+    {
+      "label": "Operating margin",
+      "value": "13.1%",
+      "note": "-1.24 pts vs prior quarter"
+    },
+    {
+      "label": "Safe to drop",
+      "value": "19",
+      "note": "No signal or duplicate"
+    }
+  ],
+  "algorithm": [
+    {
+      "step": "Pull KPIs into one table",
+      "output": "36 KPIs x 48 months"
+    },
+    {
+      "step": "Lead-lag scan",
+      "output": "Strongest lead: Commodity cost index (r 0.71)"
+    },
+    {
+      "step": "Granger-style test",
+      "output": "4 KPIs significant at p < 0.01"
+    },
+    {
+      "step": "Drop duplicates",
+      "output": "1 duplicates removed"
+    },
+    {
+      "step": "Driver model",
+      "output": "R\u00b2 0.70 with 4 drivers"
+    },
+    {
+      "step": "Explain the latest quarter",
+      "output": "Margin -1.24 pts vs prior quarter"
+    },
+    {
+      "step": "Flag anomalies",
+      "output": "1 KPIs outside their normal range"
+    },
+    {
+      "step": "Executive Q&A",
+      "output": "Ready"
+    }
+  ],
+  "tables": {
+    "Driver model": [
+      {
+        "driver": "Commodity cost index",
+        "function": "Supply chain",
+        "lead_months": 1,
+        "effect_per_unit": -0.682,
+        "last_quarter_change": 0.81,
+        "margin_impact_pts": -0.55
+      },
+      {
+        "driver": "On-shelf availability %",
+        "function": "Supply chain",
+        "lead_months": 0,
+        "effect_per_unit": 0.614,
+        "last_quarter_change": 0.83,
+        "margin_impact_pts": 0.51
+      },
+      {
+        "driver": "OTIF %",
+        "function": "Supply chain",
+        "lead_months": 0,
+        "effect_per_unit": 0.304,
+        "last_quarter_change": 0.61,
+        "margin_impact_pts": 0.19
+      },
+      {
+        "driver": "Freight cost per case",
+        "function": "Supply chain",
+        "lead_months": 1,
+        "effect_per_unit": -0.431,
+        "last_quarter_change": -0.05,
+        "margin_impact_pts": 0.02
+      }
+    ],
+    "Lead-lag scan of all KPIs": [
+      {
+        "kpi": "Commodity cost index",
+        "function": "Supply chain",
+        "lead_months": 1,
+        "correlation": -0.71,
+        "f_score": 16.4,
+        "p_value": 0.0002
+      },
+      {
+        "kpi": "On-shelf availability %",
+        "function": "Supply chain",
+        "lead_months": 0,
+        "correlation": 0.6,
+        "f_score": 11.2,
+        "p_value": 0.0017
+      },
+      {
+        "kpi": "OTIF %",
+        "function": "Supply chain",
+        "lead_months": 0,
+        "correlation": 0.5,
+        "f_score": 10.5,
+        "p_value": 0.0023
+      },
+      {
+        "kpi": "Freight cost per case",
+        "function": "Supply chain",
+        "lead_months": 1,
+        "correlation": -0.43,
+        "f_score": 8.3,
+        "p_value": 0.0062
+      },
+      {
+        "kpi": "Forecast accuracy %",
+        "function": "Supply chain",
+        "lead_months": 1,
+        "correlation": 0.52,
+        "f_score": 3.6,
+        "p_value": 0.0664
+      },
+      {
+        "kpi": "Capex % of sales",
+        "function": "Finance",
+        "lead_months": 3,
+        "correlation": 0.3,
+        "f_score": 3.6,
+        "p_value": 0.0646
+      },
+      {
+        "kpi": "Distribution points",
+        "function": "Sales",
+        "lead_months": 3,
+        "correlation": 0.23,
+        "f_score": 3.6,
+        "p_value": 0.0632
+      },
+      {
+        "kpi": "Trade promo spend % of sales",
+        "function": "Sales",
+        "lead_months": 1,
+        "correlation": -0.55,
+        "f_score": 3.1,
+        "p_value": 0.0865
+      },
+      {
+        "kpi": "Customer service level",
+        "function": "Customer",
+        "lead_months": 0,
+        "correlation": 0.29,
+        "f_score": 3.1,
+        "p_value": 0.0841
+      },
+      {
+        "kpi": "Price realisation %",
+        "function": "Sales",
+        "lead_months": 0,
+        "correlation": 0.28,
+        "f_score": 3.0,
+        "p_value": 0.0884
+      },
+      {
+        "kpi": "Inventory days",
+        "function": "Supply chain",
+        "lead_months": 0,
+        "correlation": -0.47,
+        "f_score": 3.0,
+        "p_value": 0.0927
+      },
+      {
+        "kpi": "Penetration %",
+        "function": "Marketing",
+        "lead_months": 3,
+        "correlation": -0.25,
+        "f_score": 2.9,
+        "p_value": 0.0939
+      },
+      {
+        "kpi": "Promo depth %",
+        "function": "Sales",
+        "lead_months": 1,
+        "correlation": -0.51,
+        "f_score": 2.8,
+        "p_value": 0.1004
+      },
+      {
+        "kpi": "Returns %",
+        "function": "Customer",
+        "lead_months": 1,
+        "correlation": -0.39,
+        "f_score": 2.7,
+        "p_value": 0.1087
+      },
+      {
+        "kpi": "Brand power score",
+        "function": "Marketing",
+        "lead_months": 2,
+        "correlation": 0.48,
+        "f_score": 2.6,
+        "p_value": 0.1123
+      },
+      {
+        "kpi": "Volume growth",
+        "function": "Sales",
+        "lead_months": 1,
+        "correlation": -0.16,
+        "f_score": 2.1,
+        "p_value": 0.1585
+      },
+      {
+        "kpi": "Waste %",
+        "function": "Supply chain",
+        "lead_months": 3,
+        "correlation": -0.24,
+        "f_score": 1.6,
+        "p_value": 0.2067
+      },
+      {
+        "kpi": "Working capital % of sales",
+        "function": "Finance",
+        "lead_months": 2,
+        "correlation": -0.19,
+        "f_score": 1.5,
+        "p_value": 0.2238
+      },
+      {
+        "kpi": "Overtime %",
+        "function": "HR",
+        "lead_months": 3,
+        "correlation": -0.27,
+        "f_score": 1.1,
+        "p_value": 0.2902
+      },
+      {
+        "kpi": "Share of voice",
+        "function": "Marketing",
+        "lead_months": 2,
+        "correlation": 0.33,
+        "f_score": 1.1,
+        "p_value": 0.3026
+      },
+      {
+        "kpi": "Innovation share of sales",
+        "function": "Marketing",
+        "lead_months": 2,
+        "correlation": 0.29,
+        "f_score": 0.9,
+        "p_value": 0.3517
+      },
+      {
+        "kpi": "Complaints per million",
+        "function": "Customer",
+        "lead_months": 3,
+        "correlation": 0.27,
+        "f_score": 0.8,
+        "p_value": 0.3868
+      },
+      {
+        "kpi": "Headcount",
+        "function": "HR",
+        "lead_months": 0,
+        "correlation": -0.43,
+        "f_score": 0.8,
+        "p_value": 0.3848
+      },
+      {
+        "kpi": "Factory OEE %",
+        "function": "Supply chain",
+        "lead_months": 3,
+        "correlation": 0.26,
+        "f_score": 0.8,
+        "p_value": 0.3731
+      },
+      {
+        "kpi": "FX index",
+        "function": "Finance",
+        "lead_months": 3,
+        "correlation": -0.29,
+        "f_score": 0.8,
+        "p_value": 0.3632
+      },
+      {
+        "kpi": "Key account growth",
+        "function": "Sales",
+        "lead_months": 3,
+        "correlation": 0.09,
+        "f_score": 0.7,
+        "p_value": 0.4067
+      },
+      {
+        "kpi": "Social sentiment",
+        "function": "Marketing",
+        "lead_months": 0,
+        "correlation": 0.28,
+        "f_score": 0.7,
+        "p_value": 0.397
+      },
+      {
+        "kpi": "Order fill rate",
+        "function": "Sales",
+        "lead_months": 1,
+        "correlation": 0.47,
+        "f_score": 0.5,
+        "p_value": 0.4652
+      },
+      {
+        "kpi": "Attrition %",
+        "function": "HR",
+        "lead_months": 3,
+        "correlation": -0.27,
+        "f_score": 0.5,
+        "p_value": 0.4667
+      },
+      {
+        "kpi": "DSO days",
+        "function": "Finance",
+        "lead_months": 3,
+        "correlation": 0.14,
+        "f_score": 0.4,
+        "p_value": 0.534
+      },
+      {
+        "kpi": "NPS",
+        "function": "Customer",
+        "lead_months": 2,
+        "correlation": -0.14,
+        "f_score": 0.3,
+        "p_value": 0.5961
+      },
+      {
+        "kpi": "A&P spend % of sales",
+        "function": "Marketing",
+        "lead_months": 2,
+        "correlation": -0.08,
+        "f_score": 0.3,
+        "p_value": 0.6011
+      },
+      {
+        "kpi": "Training hrs per FTE",
+        "function": "HR",
+        "lead_months": 3,
+        "correlation": -0.18,
+        "f_score": 0.3,
+        "p_value": 0.5583
+      },
+      {
+        "kpi": "E-commerce share",
+        "function": "Sales",
+        "lead_months": 0,
+        "correlation": 0.15,
+        "f_score": 0.2,
+        "p_value": 0.6219
+      },
+      {
+        "kpi": "Engagement score",
+        "function": "HR",
+        "lead_months": 3,
+        "correlation": 0.08,
+        "f_score": 0.2,
+        "p_value": 0.6568
+      },
+      {
+        "kpi": "Overheads % of sales",
+        "function": "Finance",
+        "lead_months": 0,
+        "correlation": -0.29,
+        "f_score": 0.1,
+        "p_value": 0.7774
+      }
+    ],
+    "Anomalies this month": [
+      {
+        "kpi": "Engagement score",
+        "function": "HR",
+        "latest": 72.88,
+        "z_score": -2.8
+      }
+    ],
+    "KPIs safe to drop": [
+      {
+        "kpi": "Overtime %",
+        "function": "HR",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Share of voice",
+        "function": "Marketing",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Innovation share of sales",
+        "function": "Marketing",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Complaints per million",
+        "function": "Customer",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Headcount",
+        "function": "HR",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Factory OEE %",
+        "function": "Supply chain",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "FX index",
+        "function": "Finance",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Key account growth",
+        "function": "Sales",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Social sentiment",
+        "function": "Marketing",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Order fill rate",
+        "function": "Sales",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Attrition %",
+        "function": "HR",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "DSO days",
+        "function": "Finance",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "NPS",
+        "function": "Customer",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "A&P spend % of sales",
+        "function": "Marketing",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Training hrs per FTE",
+        "function": "HR",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "E-commerce share",
+        "function": "Sales",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Engagement score",
+        "function": "HR",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Overheads % of sales",
+        "function": "Finance",
+        "reason": "No signal"
+      },
+      {
+        "kpi": "Promo depth %",
+        "function": null,
+        "reason": "Duplicates Trade promo spend % of sales"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "title": "Commodity cost index cost 0.55 pts of margin",
+      "body": "It moved +0.81 vs the prior quarter. Ask the Supply chain leader for a recovery plan with a monthly target.",
+      "impact": "-0.55 pts"
+    },
+    {
+      "title": "Rebuild the executive dashboard around 4 drivers",
+      "body": "Commodity cost index, On-shelf availability %, OTIF %, Freight cost per case explain 70% of monthly margin moves. Show each with its lead time.",
+      "impact": "36 -> 4 KPIs"
+    },
+    {
+      "title": "Retire or demote 19 KPIs",
+      "body": "They add no signal about margin. Move them to function-level reports.",
+      "impact": "Less noise"
+    }
+  ]
+}

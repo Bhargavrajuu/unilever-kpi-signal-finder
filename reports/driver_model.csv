@@ -1,0 +1,5 @@
+driver,function,lead_months,effect_per_unit,last_quarter_change,margin_impact_pts
+Commodity cost index,Supply chain,1,-0.682,0.81,-0.55
+On-shelf availability %,Supply chain,0,0.614,0.83,0.51
+OTIF %,Supply chain,0,0.304,0.61,0.19
+Freight cost per case,Supply chain,1,-0.431,-0.05,0.02

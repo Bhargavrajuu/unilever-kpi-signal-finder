@@ -1,0 +1,37 @@
+kpi,function
+Price realisation %,Sales
+Promo depth %,Sales
+Trade promo spend % of sales,Sales
+Distribution points,Sales
+Order fill rate,Sales
+Key account growth,Sales
+E-commerce share,Sales
+Volume growth,Sales
+Brand power score,Marketing
+Share of voice,Marketing
+A&P spend % of sales,Marketing
+Social sentiment,Marketing
+Penetration %,Marketing
+Innovation share of sales,Marketing
+On-shelf availability %,Supply chain
+Forecast accuracy %,Supply chain
+Commodity cost index,Supply chain
+Freight cost per case,Supply chain
+Inventory days,Supply chain
+OTIF %,Supply chain
+Factory OEE %,Supply chain
+Waste %,Supply chain
+Headcount,HR
+Attrition %,HR
+Engagement score,HR
+Training hrs per FTE,HR
+Overtime %,HR
+DSO days,Finance
+Capex % of sales,Finance
+FX index,Finance
+Working capital % of sales,Finance
+Overheads % of sales,Finance
+Complaints per million,Customer
+NPS,Customer
+Returns %,Customer
+Customer service level,Customer

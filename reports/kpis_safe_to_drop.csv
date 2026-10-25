@@ -1,0 +1,20 @@
+kpi,function,reason
+Overtime %,HR,No signal
+Share of voice,Marketing,No signal
+Innovation share of sales,Marketing,No signal
+Complaints per million,Customer,No signal
+Headcount,HR,No signal
+Factory OEE %,Supply chain,No signal
+FX index,Finance,No signal
+Key account growth,Sales,No signal
+Social sentiment,Marketing,No signal
+Order fill rate,Sales,No signal
+Attrition %,HR,No signal
+DSO days,Finance,No signal
+NPS,Customer,No signal
+A&P spend % of sales,Marketing,No signal
+Training hrs per FTE,HR,No signal
+E-commerce share,Sales,No signal
+Engagement score,HR,No signal
+Overheads % of sales,Finance,No signal
+Promo depth %,,Duplicates Trade promo spend % of sales

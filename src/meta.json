@@ -1,0 +1,51 @@
+{
+  "num": "12",
+  "area": "Business Analytics",
+  "product": "Executive Decision Intelligence",
+  "title": "Unilever KPI Signal Finder",
+  "company": "Unilever",
+  "why": "With hundreds of brands across many countries, Unilever leadership gets a flood of KPIs from every function. This tool tests which ones actually lead changes in margin, drops the noise, and explains the latest quarter in plain words.",
+  "problem": "Senior management receives hundreds of KPIs from different departments but cannot identify which indicators actually explain changes in business performance. Develop an LLM-powered decision-intelligence system that connects operational KPIs with financial outcomes and generates evidence-based executive insights.",
+  "data_note": "One business group: 36 monthly KPIs from 6 functions and operating margin over 48 months (sample data).",
+  "steps": [
+    {
+      "step": "Pull KPIs into one table",
+      "detail": "36 KPIs from 6 functions, aligned by month"
+    },
+    {
+      "step": "Lead-lag scan",
+      "detail": "Correlation with margin at lags of 0 to 3 months"
+    },
+    {
+      "step": "Granger-style test",
+      "detail": "Does the KPI improve a margin forecast beyond margin's own past?"
+    },
+    {
+      "step": "Drop duplicates",
+      "detail": "Remove KPIs that move with a stronger one (|r| > 0.85)"
+    },
+    {
+      "step": "Driver model",
+      "detail": "Regression of margin on the shortlisted drivers at their lags"
+    },
+    {
+      "step": "Explain the latest quarter",
+      "detail": "Contribution of each driver to the margin change"
+    },
+    {
+      "step": "Flag anomalies",
+      "detail": "Latest month vs its own 12-month range"
+    },
+    {
+      "step": "Executive Q&A",
+      "detail": "AI analyst answers questions in plain English"
+    }
+  ],
+  "questions": [
+    "Why did margin fall last quarter?",
+    "Which 5 KPIs should be on the CEO dashboard?",
+    "Which KPIs can we stop reporting?",
+    "What should supply chain focus on?"
+  ],
+  "author": "K Bhargav Raju"
+}
